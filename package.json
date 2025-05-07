@@ -57,14 +57,19 @@
     "clean": "rimraf dist",
     "release": "bumpp && pnpm build && pnpm publish"
   },
+  "peerDependencies": {
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "cssnano": "^7.0.7",
+    "postcss": "^8.5.3"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^3.12.1",
     "@types/node": "^22.15.14",
     "bumpp": "^9.9.2",
-    "cssnano": "^7.0.7",
     "eslint": "^9.17.0",
     "lint-staged": "^15.3.0",
-    "postcss": "^8.5.3",
     "rimraf": "^6.0.1",
     "simple-git-hooks": "^2.11.1",
     "tsup": "^8.3.5",
