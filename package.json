@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-bundle-styles",
   "type": "module",
-  "version": "0.1.0-beta.1",
+  "version": "0.1.0",
   "packageManager": "pnpm@9.10.0",
   "description": "Bundles and compresses all CSS files into a single optimized CSS file.",
   "author": "Kieran Wang <kieranwme@gmail.com> (https://github.com/kieranwv/)",
