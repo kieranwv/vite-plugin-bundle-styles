@@ -1,0 +1,80 @@
+{
+  "name": "vite-plugin-bundle-styles",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.10.0",
+  "description": "Bundles and compresses all CSS files into a single optimized CSS file.",
+  "author": "Kieran Wang <kieranwme@gmail.com> (https://github.com/kieranwv/)",
+  "license": "MIT",
+  "homepage": "https://github.com/kieranwv/vite-plugin-bundle-styles#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kieranwv/vite-plugin-bundle-styles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kieranwv/vite-plugin-bundle-styles/issues"
+  },
+  "keywords": [
+    "typescript",
+    "vite",
+    "plugin",
+    "css",
+    "bundle",
+    "styles",
+    "postcss",
+    "vite-plugin",
+    "sass",
+    "scss",
+    "less"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "unpkg": "./dist/index.global.js",
+  "jsdelivr": "./index.global.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "pnpm": ">=9.0"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "simple-git-hooks",
+    "dev": "tsup --watch",
+    "build": "pnpm clean && tsup",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "release": "bumpp && pnpm build && pnpm publish"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.12.1",
+    "@types/node": "^22.15.14",
+    "bumpp": "^9.9.2",
+    "cssnano": "^7.0.7",
+    "eslint": "^9.17.0",
+    "lint-staged": "^15.3.0",
+    "postcss": "^8.5.3",
+    "rimraf": "^6.0.1",
+    "simple-git-hooks": "^2.11.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.3.5"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "pnpm lint:fix"
+  }
+}
